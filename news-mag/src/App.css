@@ -1,0 +1,240 @@
+/* NAVBAR WRAPPER */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #121212;
+  padding: 15px 25px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+/* LOGO */
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #0d6efd;
+}
+
+/* NAV LINKS */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* REACT clickable link styling */
+.nav-link {
+  cursor: pointer;
+  color: #e4e4e4;
+  font-size: 17px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover highlight */
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+/* Smooth underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* HAMBURGER BUTTON */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  user-select: none;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: #121212;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 20px;
+  }
+}
+
+/* HAMBURGER (MOBILE) */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #111;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+}
+
+/* Card container */
+.news-card {
+  display: inline-block;
+  background-color: #141414;
+  color: #f5f5f5;
+  max-width: 345px;
+  margin: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  vertical-align: top;
+}
+
+/* Hover effect */
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Image */
+.news-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Body */
+.news-card__body {
+  padding: 10px 4px 4px;
+}
+
+/* Title */
+.news-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+/* Description */
+.news-card__text {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  color: #d0d0d0;
+}
+
+/* Button */
+.news-card__button {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 6px;
+  background-color: #0d6efd;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.news-card__button:hover {
+  background-color: #0056c7;
+  transform: translateY(-1px);
+}
+
+
+/* Main content wrapper so the board is centered and not hidden under navbar */
+.main {
+  padding: 18px 28px;
+  max-width: 1280px;
+  margin: 20px auto 60px;
+  background: transparent;
+}
+
+/* Grid for news cards */
+.news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center-align rows */
+  gap: 18px; /* spacing between cards */
+  margin-top: 14px;
+}
+
+/* Make cards behave well inside the flex grid */
+.news-card {
+  display: block;          /* override inline-block */
+  flex: 0 1 320px;         /* allow responsive shrinking/growing, preferred width */
+  width: 100%;
+  max-width: 345px;        /* keep your existing constraint */
+  vertical-align: top;
+}
+
+body {
+  background-color: #121212;
+  color: #e6e6e6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
