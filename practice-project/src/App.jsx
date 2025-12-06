@@ -1,9 +1,11 @@
 import React from 'react'
-import TodoList from './components/TodoList.jsx'
+import Todo from './component/Todo'
 
 const App = () => {
   return (
-    <div><TodoList/></div>
+    <div>
+      <Todo/>
+    </div>
   )
 }
 
