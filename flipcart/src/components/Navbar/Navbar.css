@@ -6,6 +6,7 @@
   width: 100%;
   z-index: 2;
 }
+
 .navbar {
   max-width: 1248px;
   width: 100%;
@@ -15,9 +16,11 @@
   margin: 0 auto;
   padding: 10px 124px 10px 124px;
 }
+
 .navbar-logo {
   width: 80px;
 }
+
 .navbar-search {
   display: flex;
   justify-content: space-between;
@@ -27,6 +30,7 @@
   background: var(--flipkart-white);
   border-radius: 2px;
 }
+
 .searchbtn {
   height: 36px;
   width: 44px;
@@ -37,6 +41,7 @@
   color: var(--flipkart-lightBlue);
   cursor: pointer;
 }
+
 .navbar-searchbox {
   padding: 10px;
   width: 100%;
@@ -57,19 +62,23 @@
   cursor: pointer;
   /* margin: 0 20px; */
 }
+
 .navbar-bcs {
   font-size: 13px;
   cursor: pointer;
 }
+
 .navbar-more {
   font-size: 13px;
   position: relative;
 }
+
 .moredown {
   position: absolute;
   top: 10%;
   padding: 0px 2px;
 }
+
 .navbar-cart {
   display: flex;
   align-items: center;

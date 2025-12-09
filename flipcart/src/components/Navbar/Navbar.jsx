@@ -6,28 +6,35 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 // import LoginModel from '../../Components/LoginModel/LoginModel'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-// import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 // import { removeUser } from '../../slices/userSlice'
 // import supabase from '../../supabase'
 
 const Navbar = () => {
-  // const [isopen, setIsopen] = useState(false)
+  const [isopen, setIsopen] = useState(false)
 
-  // const user = useSelector(state => state.userData.user)
-  // const dispatch = useDispatch()
+  const user = useSelector(state => state.userData.user)
+  const dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   if (user) {
-  //     setIsopen(false)
-  //   }
-  // }, [user])
+  useEffect(() => {
+    if (user) {
+      setIsopen(false)
+    }
+  }, [user])
 
-  // const signOut = async () => {
-  //   const { error } = await supabase.auth.signOut()
-  //   if (!error) {
-  //     dispatch(removeUser())
-  //   }
-  // }
+  const signOut = async () => {
+    const { error } = await supabase.auth.signOut()
+    if (!error) {
+      dispatch(removeUser())
+    }
+  }
+
+  const signIn = async () => {
+    const { error } = await supabase.auth.signIn()
+    if (!error) {
+      dispatch(addUser())
+    }
+  }
 
   return (
     <>
@@ -50,13 +57,13 @@ const Navbar = () => {
               <IoSearch />
             </button>
           </div>
-          {/* {user ? (
+          {user ? (
             <h3 onClick={signOut}>@{user?.email.slice(0, 10)}</h3>
           ) : (
             <button className='navbar-btn' onClick={() => setIsopen(true)}>
               Login
             </button>
-          )} */}
+          )}
           <div className='navbar-bcs'>
             <h3>Become a Seller</h3>
           </div>
