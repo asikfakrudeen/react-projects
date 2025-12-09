@@ -7,9 +7,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
 
     const [menu, setMenu] = useState("shop");
-
     const noline = { textDecoration: 'none'};
-
 
   return (
     <div className = 'navbar'>
